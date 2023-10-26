@@ -162,7 +162,7 @@ const Item = styled.div`
         }
     }
 `
-const Line = styled.div`
+export const Line = styled.div`
     width: 90%; 
     height: 1px;
     color: white;

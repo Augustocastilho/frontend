@@ -1,9 +1,17 @@
 import { useParams } from "react-router-dom";
 import { styled } from "styled-components";
-import { Header, Container } from "./Initial";
+import { Header, Container, Line } from "./Initial";
+import { useEffect, useState } from "react";
 
 export default function IcsPage() { 
+    const [ process, setProcess ] = useState([]);
     const { name } = useParams();
+
+    // useEffect(async() => { 
+    //     //consumir os dados do back
+    //     // const promise = await function ...
+    //     // setProcess(promise.data); 
+    // },[]);
 
     return(
         <>
@@ -14,8 +22,19 @@ export default function IcsPage() {
             </Header>
             
             <Processos>
-                <Box></Box>
-                <Box></Box>
+                <Box>
+                    <MainTittles>
+                        <p>Configuração</p>
+                        <p>Processo</p>
+                        <p>Status</p>
+                    </MainTittles>
+                    <Line>.</Line>
+                    <RenderProcess status="Parado">
+                        <span>Biblioteca</span>
+                        <span>AWSVM0102</span>
+                        <span>Parado</span>
+                    </RenderProcess>
+                </Box>
             </Processos>
         </Container>
         </>
@@ -32,9 +51,34 @@ const Processos = styled.div`
 
 `
 const Box = styled.div`
-    width: 50%; 
-    height: 200px; 
+    width: 70%; 
     background-color: white;
     border-radius: 12px;
-    margin-bottom: 50px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+
+    p{ 
+        font-size: 20px;
+        color: black;
+    }
+`
+const MainTittles = styled.div`
+    width: 100%; 
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+`
+const RenderProcess = styled.div`
+    width: 100%; 
+    height: 30px;
+    display: flex; 
+    justify-content: space-around;
+    padding: 15px 0px 0px 0px;
+
+    span { 
+        color: ${props => props.status === "Parado" ? "red" : "black"};
+        font-size: 20px;
+    }
 `
