@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function IcsPage() { 
     const [ process, setProcess ] = useState([]);
+    const [ toggle, setToggle ] = useState(false);
     const { name } = useParams();
 
     // useEffect(async() => { 
@@ -29,10 +30,13 @@ export default function IcsPage() {
                         <p>Status</p>
                     </MainTittles>
                     <Line>.</Line>
-                    <RenderProcess status="Parado">
+                    <RenderProcess status="Funcionando">
                         <span>Biblioteca</span>
                         <span>AWSVM0102</span>
-                        <span>Parado</span>
+                        <State status="Funcionando">
+                            <span>Parado</span>
+                            <button onClick={() => setToggle(!toggle)}></button>
+                        </State>
                     </RenderProcess>
                 </Box>
             </Processos>
@@ -80,5 +84,22 @@ const RenderProcess = styled.div`
     span { 
         color: ${props => props.status === "Parado" ? "red" : "black"};
         font-size: 20px;
+    }
+`
+const State = styled.div`
+    display: flex; 
+    align-items: center;
+
+    button { 
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: none;
+        background-color: ${props => props.status === "Funcionando" ? "green" : "red"};
+        margin-left: 5px;  
+
+        &:hover{ 
+            cursor: pointer; 
+        }
     }
 `
