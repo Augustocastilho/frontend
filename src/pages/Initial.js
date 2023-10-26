@@ -9,19 +9,41 @@ export default function InitialScreen() {
             <Menus>
                 <Menu>
                     <Itens> 
-                        <Item></Item>
-                        <Item></Item>
-                        <Item></Item>
-                        <Item></Item>
+                        <Item>
+                            <a>📚</a>
+                            <p>Estudos</p>
+                        </Item>
+                        <Item>
+                            <a>🏭​</a>
+                            <p>Empresa</p>
+                        </Item>
+                        <Item>
+                            <a>🚦​</a>
+                            <p>Trânsito</p>
+                        </Item>
+                        <Item>
+                            <a>📽️​</a>
+                            <p>Videos</p>
+                        </Item>
                     </Itens>
                     <Line>.</Line>
                     <Itens> 
                         <Item>
-                            
+                            <a>​🚫</a>
+                            <p>Catacraca</p>
                         </Item>
-                        <Item></Item>
-                        <Item></Item>
-                        <Item></Item>
+                        <Item>
+                            <a>📲​</a>
+                            <p>Atendimento</p>
+                        </Item>
+                        <Item>
+                            <a>👨‍🌾</a>
+                            <p>Agro</p>
+                        </Item>
+                        <Item>
+                            <a>🎮</a>
+                            <p>Jogos</p>
+                        </Item>
                     </Itens>
                 </Menu>
             </Menus>
@@ -71,16 +93,30 @@ const Itens = styled.ul`
 const Item = styled.div`
     width: 150px; 
     height: 150px;
-    background-color: red;
+    background-color: #DCDCDC;
     border-radius: 12px;
     transition: background 2s, color 1s;
     margin: 0px 50px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+
+    a { 
+        margin-top: 10px;
+        font-size: 60px;
+    }
+
+    p { 
+        font-size: 22px;
+        font-weight: bold;
+    }
 
     &:hover, 
     &:focus{ 
         cursor: pointer; 
-        background: white;
-        color: black;
+        background: black;
+        color: white;
     }
     
     &:active {  
