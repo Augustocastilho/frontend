@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 export default function InitialScreen() { 
+    const navigate = useNavigate();
+
     return(
         <>
         <Container>
@@ -9,38 +12,38 @@ export default function InitialScreen() {
             <Menus>
                 <Menu>
                     <Itens> 
-                        <Item>
+                        <Item onClick={() => navigate(`/ic/estudos`)}>
                             <a>📚</a>
                             <p>Estudos</p>
                         </Item>
-                        <Item>
+                        <Item onClick={() => navigate(`/ic/empresa`)}>
                             <a>🏭​</a>
                             <p>Empresa</p>
                         </Item>
-                        <Item>
+                        <Item onClick={() => navigate(`/ic/transito`)}>
                             <a>🚦​</a>
                             <p>Trânsito</p>
                         </Item>
-                        <Item>
+                        <Item onClick={() => navigate(`/ic/videos`)}>
                             <a>📽️​</a>
                             <p>Videos</p>
                         </Item>
                     </Itens>
                     <Line>.</Line>
                     <Itens> 
-                        <Item>
+                        <Item onClick={() => navigate(`/ic/catraca`)}>
                             <a>​🚫</a>
                             <p>Catacraca</p>
                         </Item>
-                        <Item>
+                        <Item onClick={() => navigate(`/ic/atendimento`)}>
                             <a>📲​</a>
                             <p>Atendimento</p>
                         </Item>
-                        <Item>
+                        <Item onClick={() => navigate(`/ic/agro`)}>
                             <a>👨‍🌾</a>
                             <p>Agro</p>
                         </Item>
-                        <Item>
+                        <Item onClick={() => navigate(`/ic/jogos`)}>
                             <a>🎮</a>
                             <p>Jogos</p>
                         </Item>

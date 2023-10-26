@@ -9,6 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<InitialScreen />} />
+          <Route path="/ic/:name" element={<InitialScreen />} /> 
       </Routes>
   </BrowserRouter>
   );
