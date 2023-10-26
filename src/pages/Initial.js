@@ -7,7 +7,10 @@ export default function InitialScreen() {
     return(
         <>
         <Container>
-            <Header>OIIII</Header>
+            <Header>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjNqOha3Ey3GYDg_syjCBX7aaioDhReiGzLLy5CpTfsIXpyM5wkfpe9FT-PdU2_4fpih0&usqp=CAU" />
+                <p>Escolha o produto de interesse</p>
+            </Header>
 
             <Menus>
                 <Menu>
@@ -63,13 +66,30 @@ const Container = styled.div`
     left: 0;
     background-color: gray; 
 `
-const Header = styled.div`
+export const Header = styled.div`
     width: 100%; 
     height: 10%; 
     background-color: white; 
     display: flex; 
     align-items: center;
     justify-content: center;
+    padding: 10px 0px 5px 10px;
+    border-radius: 0px 0px 12px 12px;
+
+    p { 
+        font-weight: bold;
+        font-size: 40px;
+        width: 90%;
+        display: flex; 
+        justify-content: center;
+    }
+
+    img { 
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
 `
 const Menus = styled.div`
     width: 100%; 
@@ -86,6 +106,11 @@ const Menu = styled.div`
     display: flex; 
     flex-direction: column; 
     align-items: center;
+
+    @media (max-width: 1200px) {
+        width: 80%;
+        padding: 5px 20px; 
+    }
 `
 const Itens = styled.ul`
     width: 100%
@@ -125,6 +150,16 @@ const Item = styled.div`
     &:active {  
         transform: scale(0.98);
         box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    }
+
+    @media (max-width: 1200px) {
+        width: 130px;
+        height: 150px;
+        margin: 0px 30px;
+
+        p { 
+            font-size: 18px;
+        }
     }
 `
 const Line = styled.div`
