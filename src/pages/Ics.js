@@ -55,7 +55,15 @@ export default function IcsPage() {
         }, 
         {
             id: 3,
-            nome: "Gerenciamento Estudantil",
+            nome: "Sistema de Gerenciamento Estudantil",
+            ic: "VMAWS0101", 
+            criticidade: 2, 
+            responsavel: "Engenheiro", 
+            status: "Parado"
+        }, 
+        {
+            id: 4,
+            nome: "Sistema de Gerenciamento Estudantil",
             ic: "VMAWS0101", 
             criticidade: 2, 
             responsavel: "Engenheiro", 
@@ -78,6 +86,7 @@ export default function IcsPage() {
                         <p>Processo</p>
                         <p>Status</p>
                     </MainTittles>
+
                     <Line>.</Line>
 
                     {process.map(proces => (
@@ -113,6 +122,7 @@ const Box = styled.div`
     display: flex; 
     flex-direction: column;
     align-items: center;
+    padding-bottom: 30px;
 
     p{ 
         font-size: 20px;
@@ -124,14 +134,14 @@ const MainTittles = styled.div`
     height: 10%;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 40px;
+    margin: 20px 0px 10px 0px;
 `
 const RenderProcess = styled.div`
     width: 100%; 
     height: 30px;
     display: flex; 
     justify-content: space-around;
-    padding: 15px 0px 0px 0px;
+    margin: 18px 0px;
 
     span { 
         color: ${props => props.status === "Parado" ? "red" : "black"};
@@ -140,7 +150,7 @@ const RenderProcess = styled.div`
 
     span#name { 
         width: 140px;
-        word-break: break-all;
+        word-wrap: break-word;
         text-align: center;
     }
 `

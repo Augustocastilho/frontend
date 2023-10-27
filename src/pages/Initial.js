@@ -75,6 +75,7 @@ export const Header = styled.div`
     justify-content: center;
     padding: 10px 0px 5px 10px;
     border-radius: 0px 0px 12px 12px;
+    font-family: 'Agbalumo', cursive;
 
     p { 
         font-weight: bold;
@@ -82,6 +83,8 @@ export const Header = styled.div`
         width: 90%;
         display: flex; 
         justify-content: center;
+        word-wrap: break-word;
+        text-align: center;
     }
 
     img { 
@@ -108,7 +111,7 @@ const Menu = styled.div`
     align-items: center;
 
     @media (max-width: 1200px) {
-        width: 80%;
+        width: 85%;
         padding: 5px 20px; 
     }
 `
@@ -116,7 +119,8 @@ const Itens = styled.ul`
     width: 100%
     height: 40%;
     display: flex; 
-    justify-content: space-around; 
+    justify-content: space-around;
+    margin-top: 10px; 
 `
 const Item = styled.div`
     width: 150px; 
@@ -124,7 +128,7 @@ const Item = styled.div`
     background-color: #DCDCDC;
     border-radius: 12px;
     transition: background 2s, color 1s;
-    margin: 0px 50px;
+    margin: 0px 50px 0px 10px;
     display: flex; 
     flex-direction: column; 
     align-items: center;
@@ -138,6 +142,7 @@ const Item = styled.div`
     p { 
         font-size: 22px;
         font-weight: bold;
+        margin-top: 20px;
     }
 
     &:hover, 
@@ -163,10 +168,11 @@ const Item = styled.div`
     }
 `
 export const Line = styled.div`
-    width: 90%; 
-    height: 1px;
+    width: 95%; 
+    height: 3px;
     color: white;
     background-color: black;
     border-style: solid;
     border-color: black;
+    margin: 20px 0px 5px 0px;
 `
