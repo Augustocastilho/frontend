@@ -1,6 +1,6 @@
 import { RotatingSquare } from "react-loader-spinner";
 import { styled } from "styled-components";
-import gif from "../styles/ufjf4matt.gif";
+import gif from "../styles/images/ufjf4matt.gif";
 import { useNavigate } from "react-router-dom";
 
 export default function IntroPage() { 
