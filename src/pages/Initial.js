@@ -15,40 +15,48 @@ export default function InitialScreen() {
             <Menus>
                 <Menu>
                     <Itens> 
-                        <Item onClick={() => navigate(`/ic/estudos`)}>
+                        <Item onClick={() => navigate(`/ic/todos`)}>
+                            <a>📄</a>
+                            <p>Todos</p>
+                        </Item>
+                        <Item onClick={() => navigate(`/ic/VMAWS0101`)}>
                             <a>📚</a>
                             <p>Estudos</p>
                         </Item>
-                        <Item onClick={() => navigate(`/ic/empresa`)}>
+                        <Item onClick={() => navigate(`/ic/VMAWS0102`)}>
                             <a>🏭​</a>
                             <p>Empresa</p>
                         </Item>
-                        <Item onClick={() => navigate(`/ic/transito`)}>
+                        <Item onClick={() => navigate(`/ic/VMAWS0103`)}>
                             <a>🚦​</a>
                             <p>Trânsito</p>
                         </Item>
-                        <Item onClick={() => navigate(`/ic/videos`)}>
+                        <Item onClick={() => navigate(`/ic/VMAWS0104`)}>
                             <a>📽️​</a>
                             <p>Videos</p>
                         </Item>
                     </Itens>
                     <Line>.</Line>
                     <Itens> 
-                        <Item onClick={() => navigate(`/ic/catraca`)}>
+                        <Item onClick={() => navigate(`/ic/VMAWS0105`)}>
                             <a>​🚫</a>
                             <p>Catacraca</p>
                         </Item>
-                        <Item onClick={() => navigate(`/ic/atendimento`)}>
+                        <Item onClick={() => navigate(`/ic/VMAWS0106`)}>
                             <a>📲​</a>
                             <p>Atendimento</p>
                         </Item>
-                        <Item onClick={() => navigate(`/ic/agro`)}>
+                        <Item onClick={() => navigate(`/ic/VMAWS0107`)}>
                             <a>👨‍🌾</a>
                             <p>Agro</p>
                         </Item>
-                        <Item onClick={() => navigate(`/ic/jogos`)}>
+                        <Item onClick={() => navigate(`/ic/VMAWS0108`)}>
                             <a>🎮</a>
                             <p>Jogos</p>
+                        </Item>
+                        <Item onClick={() => navigate(`/profile/lucas martins`)}>
+                            <a>😀</a>
+                            <p>Perfil</p>
                         </Item>
                     </Itens>
                 </Menu>
@@ -64,7 +72,7 @@ export const Container = styled.div`
     position: fixed; 
     top: 0; 
     left: 0;
-    background-color: gray; 
+    background-color: lightgray; 
 `
 export const Header = styled.div`
     width: 100%; 
@@ -127,7 +135,7 @@ const Item = styled.div`
     height: 150px;
     background-color: #DCDCDC;
     border-radius: 12px;
-    transition: background 2s, color 1s;
+    transition: background 1s, color 0.5s;
     margin: 0px 50px 0px 10px;
     display: flex; 
     flex-direction: column; 
@@ -148,7 +156,7 @@ const Item = styled.div`
     &:hover, 
     &:focus{ 
         cursor: pointer; 
-        background: black;
+        background: gray;
         color: white;
     }
     

@@ -5,71 +5,30 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function IcsPage() { 
-    //const [ process, setProcess ] = useState([]);
+    const [ process, setProcess ] = useState([]);
     const { name } = useParams();
 
-    //DESCOMENTAR DEPOIS DE CONECTAR O BANCO
-    // useEffect(async() => { 
-    //     try {
-    //         const promise = await axios.get(`link do banco/${name}`);
-    //         setProcess(promise.data);
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-         
-    // },[]);
-
-    async function changeState(id,status) { 
-        if(status === "Funcionando") { 
-            //DESCOMENTAR DEPOIS DE CONECTAR O BANCO
-            const info = { status: "Parado" };
-            //await axios.put(`link do banco/${id}`,info);
-            console.log("Trocou o status");
-        } else {
-            //DESCOMENTAR DEPOIS DE CONECTAR O BANCO
-            const info = { status: "Funcionando" };
-            //await axios.put(`link do banco/${id}`,info);
-            console.log("Trocou o status");
+    useEffect(() => {
+        try {
+            if(name === "todos") {
+                axios.get(`http://localhost:3001/getTableData`)
+                    .then((response) => setProcess(response.data));
+            }
+            else {
+                axios.get(`http://localhost:3001/getTableData?ic=${name}`)
+                    .then((response) => setProcess(response.data));
+            }
+        } catch (error) {
+            console.log(error);
         }
 
-        //SE NAO ATUALIZAR O ESTADO ASSIM QUE TROCAR DESCOMENTAR A LINHA DEBAIXO, CASO CONTRATRIO SO EXCLUIR A LINHA ABAIXO
-        //window.location.reload();
+    }, []);
+
+    async function changeState(id) {
+        await axios.patch(`http://localhost:3001/alterarStatus?id=${id}`);
+        console.log("Trocou o status");
+        window.location.reload();
     }
-
-    const process = [ 
-        {
-            id: 1,
-            nome: "Biblioteca",
-            ic: "VMAWS0101", 
-            criticidade: 2, 
-            responsavel: "Engenheiro", 
-            status: "Funcionando"
-        }, 
-        {
-            id: 2,
-            nome: "Biblioteca",
-            ic: "VMAWS0101", 
-            criticidade: 2, 
-            responsavel: "Engenheiro", 
-            status: "Funcionando"
-        }, 
-        {
-            id: 3,
-            nome: "Sistema de Gerenciamento Estudantil",
-            ic: "VMAWS0101", 
-            criticidade: 2, 
-            responsavel: "Engenheiro", 
-            status: "Parado"
-        }, 
-        {
-            id: 4,
-            nome: "Sistema de Gerenciamento Estudantil",
-            ic: "VMAWS0101", 
-            criticidade: 2, 
-            responsavel: "Engenheiro", 
-            status: "Parado"
-        }
-    ];
 
     return(
         <>
@@ -95,7 +54,7 @@ export default function IcsPage() {
                         <span>{proces.ic}</span>
                     <State status={proces.status}>
                         <span>{proces.status}</span>
-                        <button onClick={() => changeState(proces.id,proces.status)}>Troca</button>
+                        <button onClick={() => changeState(proces.id)}>Troca</button>
                     </State>
                      </RenderProcess>
                     ))}
@@ -123,7 +82,9 @@ const Box = styled.div`
     flex-direction: column;
     align-items: center;
     padding-bottom: 30px;
-
+    max-height: 600px;
+    overflow-y: auto;
+    
     p{ 
         font-size: 20px;
         color: black;
