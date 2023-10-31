@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<IntroPage />} />
           <Route path="/main" element={<InitialScreen />} />
           <Route path="/ic/:name" element={<IcsPage />} /> 
-          <Route path="/profile/:name" element={<Profile />} />
+          <Route path="/profiles" element={<Profile />} />
       </Routes>
   </BrowserRouter>
   );

@@ -54,7 +54,7 @@ export default function InitialScreen() {
                             <a>🎮</a>
                             <p>Jogos</p>
                         </Item>
-                        <Item onClick={() => navigate(`/profile/lucas martins`)}>
+                        <Item onClick={() => navigate(`/profiles`)}>
                             <a>😀</a>
                             <p>Perfil</p>
                         </Item>
