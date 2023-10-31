@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { Container, Header, Line } from "./Initial";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import lucasPhoto from "../styles/images/lucasprof.png";
 
 export default function Profile() { 

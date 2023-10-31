@@ -117,9 +117,10 @@ const Menu = styled.div`
     display: flex; 
     flex-direction: column; 
     align-items: center;
+    justify-content: space-around;
 
     @media (max-width: 1200px) {
-        width: 85%;
+        width: 90%;
         padding: 5px 20px; 
     }
 `
@@ -128,7 +129,7 @@ const Itens = styled.ul`
     height: 40%;
     display: flex; 
     justify-content: space-around;
-    margin-top: 10px; 
+    margin: 10px 0px; 
 `
 const Item = styled.div`
     width: 150px; 
@@ -166,12 +167,42 @@ const Item = styled.div`
     }
 
     @media (max-width: 1200px) {
-        width: 130px;
-        height: 150px;
-        margin: 0px 30px;
+        width: 110px;
+        height: 130px;
+        margin: 0px 25px;
 
         p { 
-            font-size: 18px;
+            font-size: 17px;
+        }
+    }
+
+    @media (max-width: 800px) {
+        width: 100px;
+        height: 120px;
+        margin: 0px 15px;
+
+        p { 
+            font-size: 16px;
+        }
+
+        a { 
+            margin-top: 10px;
+            font-size: 50px;
+        }
+    }
+
+    @media (max-width: 700px) {
+        width: 93px;
+        height: 130px;
+        margin: 0px 9px;
+
+        p { 
+            font-size: 15px;
+        }
+
+        a { 
+            margin-top: 10px;
+            font-size: 50px;
         }
     }
 `
